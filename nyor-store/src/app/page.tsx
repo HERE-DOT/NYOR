@@ -4,18 +4,21 @@ import { EmptyState } from "@/components/ui/empty-state";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { brand, placeholderCategories } from "@/config/site";
 
+// Redactado en futuro a propósito: estas funciones (checkout, pagos, entregas) aún no existen.
 const promesas = [
   {
     titulo: "Entrega a tu medida",
-    texto: "A domicilio o recogiendo en un punto acordado.",
+    texto: "Podrás recibir tu pedido a domicilio o recogerlo en un punto acordado.",
   },
   {
     titulo: "Pagos sencillos",
-    texto: "Transferencia, Nequi o efectivo, confirmados por nuestro equipo.",
+    texto:
+      "Pagarás por transferencia, Nequi o efectivo, y nuestro equipo confirmará tu pago.",
   },
   {
     titulo: "Todo en un solo lugar",
-    texto: "Moda, perfumería, belleza, calzado y accesorios de varias marcas.",
+    texto:
+      "Moda, perfumería, belleza, calzado y accesorios de varias marcas, reunidos aquí.",
   },
 ];
 
@@ -49,7 +52,7 @@ export default function HomePage() {
           {/* Composición decorativa: arco + resplandor ("OR" = luz). No es una foto de producto. */}
           <div
             aria-hidden
-            className="relative mx-auto aspect-[4/5] w-full max-w-sm lg:max-w-md"
+            className="relative mx-auto aspect-[6/5] w-full max-w-xs sm:aspect-[4/5] sm:max-w-sm lg:max-w-md"
           >
             <div className="glow-or absolute -inset-10" />
             <div className="bg-rosa absolute inset-0 rounded-t-[999px] rounded-b-[2rem]" />
@@ -72,18 +75,17 @@ export default function HomePage() {
           </h2>
           <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3">
             {placeholderCategories.map((cat, i) => (
+              // Tarjeta informativa, NO es un enlace: aún no hay filtros por categoría.
+              // En la Fase 3 pasará a ser <Link href={`/tienda?categoria=${cat.slug}`}>.
               <li key={cat.slug}>
-                <a
-                  href="/tienda"
-                  className="group border-chocolate/20 hover:bg-chocolate hover:text-marfil flex aspect-[5/3] flex-col justify-between rounded-2xl border bg-white/40 p-5 transition-colors duration-200"
-                >
+                <div className="border-chocolate/20 flex aspect-[5/3] flex-col justify-between rounded-2xl border bg-white/40 p-5">
                   <span aria-hidden className="text-sm tracking-[0.2em]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="font-serif text-2xl leading-tight sm:text-3xl">
                     {cat.name}
                   </span>
-                </a>
+                </div>
               </li>
             ))}
           </ul>
@@ -115,8 +117,9 @@ export default function HomePage() {
       {/* Promesas */}
       <section aria-labelledby="titulo-promesas" className="py-16 sm:py-24">
         <Container>
-          <h2 id="titulo-promesas" className="sr-only">
-            Cómo compras en NYOR
+          <Eyebrow>Muy pronto</Eyebrow>
+          <h2 id="titulo-promesas" className="mt-5 mb-12 text-4xl sm:text-5xl">
+            Así será comprar en NYOR
           </h2>
           <ul className="grid gap-10 md:grid-cols-3">
             {promesas.map((p) => (

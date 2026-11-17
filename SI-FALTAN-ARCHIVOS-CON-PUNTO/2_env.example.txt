@@ -1,0 +1,19 @@
+# NYOR — variables de entorno
+# Copia este archivo a `.env.local` (nunca se versiona) y completa los valores.
+# NO pegues claves reales en este archivo ni en el chat.
+
+# URL pública del sitio (sin barra final). En local: http://localhost:3000
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# Mientras sea false, el sitio se publica con noindex y robots.txt bloquea todo.
+# Cambiar a true solo en el lanzamiento (Fase 9).
+NEXT_PUBLIC_ALLOW_INDEXING=false
+
+# ---------------------------------------------------------------------------
+# FASE 2 (aún no se usan): proyecto Supabase NUEVO y EXCLUSIVO de NYOR.
+# Solo las dos primeras llevan prefijo NEXT_PUBLIC_ porque son seguras para el navegador.
+# La clave de servicio NUNCA debe llevar NEXT_PUBLIC_ ni usarse en componentes cliente.
+# ---------------------------------------------------------------------------
+# NEXT_PUBLIC_SUPABASE_URL=
+# NEXT_PUBLIC_SUPABASE_ANON_KEY=
+# SUPABASE_SERVICE_ROLE_KEY=

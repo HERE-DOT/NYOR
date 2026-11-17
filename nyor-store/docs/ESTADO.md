@@ -2,6 +2,14 @@
 
 Última actualización: 2026-11-17 · **Fase 1 — Fundaciones: terminada.** Fase 2 pendiente de aprobación.
 
+## Fase 1.1 (correcciones de la auditoría del 17-nov-2026)
+
+- Tarjetas de categoría de Inicio: ya no son enlaces ni tienen efecto hover (aún no hay filtros); se vuelven `Link` con filtro en la Fase 3.
+- Sección de promesas de Inicio reescrita en futuro y rotulada «Muy pronto», porque checkout, pagos y entregas aún no existen.
+- Arco decorativo del hero más bajo en móvil.
+- README: los pasos ya no dependen de `.env.example`.
+- Pendiente fuera del código (acciones del propietario): subir a GitHub los archivos con punto (`.gitignore`, `.env.example`, `.github/workflows/ci.yml`, `.prettierrc.json`, `.prettierignore`), eliminar `next-env.d.ts` del repositorio, pasar el repositorio a privado y activar verificación en dos pasos en GitHub y Vercel.
+
 ## Fase 1: terminado y verificado
 
 | Elemento                                                                               | Verificación                    |

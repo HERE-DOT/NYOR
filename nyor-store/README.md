@@ -2,7 +2,7 @@
 
 Tienda online multimarca para mujer — _Tu esencia, tu estilo_. Venta directa al consumidor final en Colombia.
 
-> **Estado: en desarrollo (Fase 1 terminada).** No es una tienda funcional ni debe recibir pedidos ni datos reales. Ver [`docs/ESTADO.md`](docs/ESTADO.md) para saber qué está hecho y qué no.
+> **Estado: en desarrollo (Fase 1.1 terminada).** No es una tienda funcional ni debe recibir pedidos ni datos reales. Ver [`docs/ESTADO.md`](docs/ESTADO.md) para saber qué está hecho y qué no.
 
 ## Stack
 
@@ -19,9 +19,10 @@ NYOR es un proyecto **independiente**: no comparte base de datos, claves, usuari
 
 ```bash
 npm ci
-cp .env.example .env.local   # y revisa los valores
 npm run dev                  # http://localhost:3000
 ```
+
+Opcional: si existe `.env.example`, cópialo a `.env.local` (`cp .env.example .env.local` en Mac/Linux; `copy .env.example .env.local` en Windows). Sin ese archivo el sitio arranca igual con valores por defecto (`localhost:3000`, sin indexación).
 
 ## Comandos
 
