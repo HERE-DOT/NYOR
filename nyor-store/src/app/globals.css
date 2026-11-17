@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/*
+ * Paleta de marca NYOR (REQUISITOS.md §1). Los cuatro colores base NO se modifican.
+ *
+ * Reglas de contraste verificadas (WCAG):
+ *  - chocolate sobre marfil 8,7:1 · sobre blanco 10,5:1  → texto principal
+ *  - chocolate sobre rosa 4,5:1                           → botones rosa (texto chocolate)
+ *  - marfil sobre chocolate 8,7:1                         → texto en secciones oscuras
+ *  - dorado sobre chocolate 4,0:1                         → solo texto grande o acentos
+ *  - dorado sobre marfil 2,2:1 y rosa sobre marfil 1,9:1  → NUNCA como texto; solo decoración
+ */
+@theme {
+  --color-rosa: #d99a9c;
+  --color-marfil: #f7e8dc;
+  --color-dorado: #c49a55;
+  --color-chocolate: #57382e;
+
+  --font-sans: "Jost Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond Variable", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    background: var(--color-marfil);
+    color: var(--color-chocolate);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Foco visible con contraste suficiente (el dorado no alcanza 3:1 sobre marfil). */
+  :focus-visible {
+    outline: 2px solid var(--color-chocolate);
+    outline-offset: 3px;
+  }
+
+  .on-dark :focus-visible {
+    outline-color: var(--color-marfil);
+  }
+
+  ::selection {
+    background: var(--color-rosa);
+    color: var(--color-chocolate);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Resplandor dorado: "OR" = luz. Decorativo, no transmite información. */
+@utility glow-or {
+  background-image: radial-gradient(
+    50% 50% at 50% 50%,
+    color-mix(in srgb, var(--color-dorado) 55%, transparent) 0%,
+    color-mix(in srgb, var(--color-rosa) 35%, transparent) 50%,
+    transparent 100%
+  );
+}
