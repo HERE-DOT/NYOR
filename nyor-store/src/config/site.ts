@@ -29,6 +29,11 @@ export const placeholderCategories: readonly {
   slug: string;
   name: string;
   icon: CategoryIconKind;
+  /**
+   * Foto real opcional (ruta bajo /public, p. ej. "/categorias/perfumeria.jpg", 4:3).
+   * Si no existe, la tarjeta muestra la ilustración de marca.
+   */
+  photo?: string;
 }[] = [
   { slug: "perfumeria", name: "Perfumería", icon: "perfume" },
   { slug: "moda", name: "Moda", icon: "moda" },

@@ -1,4 +1,4 @@
-import { CategoryIcon } from "@/components/brand/category-icon";
+import { CategoryCard } from "@/components/brand/category-card";
 import { Logo } from "@/components/brand/logo";
 import { PhraseBand } from "@/components/brand/phrase-band";
 import { ButtonLink } from "@/components/ui/button";
@@ -82,15 +82,8 @@ export default function HomePage() {
           </h2>
           <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
             {placeholderCategories.map((cat) => (
-              // Tarjeta informativa, NO es un enlace: aún no hay filtros por categoría.
-              // En la Fase 3 pasará a ser <Link href={`/tienda?categoria=${cat.slug}`}>.
               <li key={cat.slug}>
-                <div className="border-dorado/50 flex aspect-[4/3] flex-col items-center justify-center gap-3 rounded-3xl border bg-white/55 p-4 text-center shadow-sm">
-                  <CategoryIcon kind={cat.icon} className="h-12 w-12 sm:h-14 sm:w-14" />
-                  <span className="font-serif text-xl leading-tight sm:text-2xl">
-                    {cat.name}
-                  </span>
-                </div>
+                <CategoryCard {...cat} />
               </li>
             ))}
           </ul>

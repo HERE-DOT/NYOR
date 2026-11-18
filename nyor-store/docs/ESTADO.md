@@ -59,3 +59,8 @@ Requiere tu aprobación y, antes de empezar: proyecto Supabase nuevo de NYOR (de
 - Fondo "seda", filetes dorados, tarjetas redondeadas con iconos lineales propios, frase en caligrafía (Allura), botón principal chocolate.
 - Omitido a propósito: buscador, carrito y fotos de producto de la maqueta (aún no existen funciones ni fotografías reales).
 - Verificado: format, lint, typecheck, tests unitarios, build y e2e (axe) en móvil y escritorio.
+
+## Fase 1.3 — Tarjetas de categoría interactivas (2026-11-18)
+- Las categorías son enlaces (`/tienda?categoria=<slug>`) con animación (elevación, brillo dorado, flecha, icono). Teclado y lector de pantalla: etiqueta "Ver <categoría>".
+- **Pendiente honesto:** `/tienda` aún no filtra por categoría (Fase 3); por ahora muestra "Catálogo en preparación".
+- Imágenes: ilustraciones de marca. Para fotos reales: ver `public/categorias/LEEME.txt` (campo `photo` en `src/config/site.ts`).

@@ -1,0 +1,6 @@
+Fotos de categorías (opcional)
+------------------------------
+Copia aquí una foto por categoría (formato 4:3, JPG o WebP, ~1200x900) y agrega su ruta en
+src/config/site.ts, campo `photo`, por ejemplo:
+  { slug: "perfumeria", name: "Perfumería", icon: "perfume", photo: "/categorias/perfumeria.jpg" }
+Usa solo fotos propias o con licencia comercial. Si no hay foto, se muestra la ilustración.
