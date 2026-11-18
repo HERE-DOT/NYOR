@@ -39,13 +39,20 @@ export function CategoryCard({
         )}
       >
         {photo ? (
-          <Image
-            src={photo}
-            alt=""
-            fill
-            sizes="(min-width: 640px) 33vw, 50vw"
-            className="object-cover transition-transform duration-700 group-hover:scale-110 motion-reduce:transform-none"
-          />
+          <>
+            <Image
+              src={photo}
+              alt=""
+              fill
+              sizes="(min-width: 640px) 33vw, 50vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-110 motion-reduce:transform-none"
+            />
+            {/* Velo cálido de marca para que todas las fotos se vean coherentes */}
+            <span
+              aria-hidden
+              className="bg-rosa/15 absolute inset-0 mix-blend-multiply"
+            />
+          </>
         ) : (
           <>
             <CrownOrnament

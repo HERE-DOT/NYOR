@@ -1,6 +1,8 @@
 import { CategoryCard } from "@/components/brand/category-card";
 import { Logo } from "@/components/brand/logo";
 import { PhraseBand } from "@/components/brand/phrase-band";
+import { existsSync } from "node:fs";
+import path from "node:path";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { EmptyState } from "@/components/ui/empty-state";
@@ -24,6 +26,14 @@ const promesas = [
       "Moda, perfumería, belleza, calzado y accesorios de varias marcas, reunidos aquí.",
   },
 ];
+
+/** Usa la foto /public/categorias/<slug>.jpg solo si el archivo existe; si no, la ilustración de marca. */
+function fotoDeCategoria(slug: string): string | undefined {
+  const archivo = `${slug}.jpg`;
+  return existsSync(path.join(process.cwd(), "public", "categorias", archivo))
+    ? `/categorias/${archivo}`
+    : undefined;
+}
 
 export default function HomePage() {
   return (
@@ -83,7 +93,7 @@ export default function HomePage() {
           <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
             {placeholderCategories.map((cat) => (
               <li key={cat.slug}>
-                <CategoryCard {...cat} />
+                <CategoryCard {...cat} photo={cat.photo ?? fotoDeCategoria(cat.slug)} />
               </li>
             ))}
           </ul>

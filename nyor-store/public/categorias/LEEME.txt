@@ -1,6 +1,15 @@
-Fotos de categorías (opcional)
-------------------------------
-Copia aquí una foto por categoría (formato 4:3, JPG o WebP, ~1200x900) y agrega su ruta en
-src/config/site.ts, campo `photo`, por ejemplo:
-  { slug: "perfumeria", name: "Perfumería", icon: "perfume", photo: "/categorias/perfumeria.jpg" }
-Usa solo fotos propias o con licencia comercial. Si no hay foto, se muestra la ilustración.
+FOTOS DE CATEGORÍAS (Pexels, licencia gratuita para uso comercial, sin atribución obligatoria)
+===========================================================================================
+Descarga cada foto (botón "Free download", tamaño Large o Original), renómbrala EXACTAMENTE así
+y colócala en esta carpeta (public/categorias/). La web las detecta sola; no hay que tocar código.
+
+  perfumeria.jpg         https://www.pexels.com/photo/elegant-perfume-bottle-on-pink-surface-35825543/
+  moda.jpg               https://www.pexels.com/photo/collection-of-female-clothes-on-rack-in-boutique-4947543/
+  belleza-y-cuidado.jpg  https://www.pexels.com/photo/stylish-beauty-products-arranged-on-pink-table-1502219/
+  accesorios.jpg         https://www.pexels.com/photo/overhead-shot-of-gold-jewelry-on-a-white-surface-7248760/
+  calzado.jpg            https://www.pexels.com/photo/women-s-beige-high-heels-134064/
+  otros-productos.jpg    https://www.pexels.com/photo/a-white-and-pink-gift-box-5704738/
+
+Consejos: formato JPG, ~1200x900 px o similar (se recorta a 4:3), menos de 400 KB cada una
+(puedes comprimirlas en squoosh.app). Si falta una foto, esa tarjeta muestra la ilustración dorada.
+Revisa que cada foto te guste: puedes cambiarla por otra de Pexels con el mismo nombre de archivo.

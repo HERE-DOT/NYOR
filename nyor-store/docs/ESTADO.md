@@ -64,3 +64,7 @@ Requiere tu aprobación y, antes de empezar: proyecto Supabase nuevo de NYOR (de
 - Las categorías son enlaces (`/tienda?categoria=<slug>`) con animación (elevación, brillo dorado, flecha, icono). Teclado y lector de pantalla: etiqueta "Ver <categoría>".
 - **Pendiente honesto:** `/tienda` aún no filtra por categoría (Fase 3); por ahora muestra "Catálogo en preparación".
 - Imágenes: ilustraciones de marca. Para fotos reales: ver `public/categorias/LEEME.txt` (campo `photo` en `src/config/site.ts`).
+
+## Fase 1.4 — Fotos de categoría (Pexels)
+- La portada usa `public/categorias/<slug>.jpg` si existe; si no, la ilustración. Lista de fotos Pexels elegidas y nombres de archivo en `public/categorias/LEEME.txt`.
+- **Pendiente (usuario):** descargar las 6 fotos y subirlas (no pude descargarlas: mi entorno no accede a Pexels). Licencia Pexels: uso comercial permitido, sin atribución obligatoria; revisar que cada foto no muestre marcas ni personas reconocibles.
