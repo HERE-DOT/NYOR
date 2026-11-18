@@ -22,11 +22,18 @@ export const mainNav: readonly NavItem[] = [
  * Desde la Fase 3 salen de la base de datos y se administran desde el panel.
  * No es catálogo real.
  */
-export const placeholderCategories: readonly { slug: string; name: string }[] = [
-  { slug: "moda", name: "Moda" },
-  { slug: "perfumeria", name: "Perfumería" },
-  { slug: "belleza-y-cuidado", name: "Belleza y cuidado" },
-  { slug: "calzado", name: "Calzado" },
-  { slug: "accesorios", name: "Accesorios" },
-  { slug: "otros-productos", name: "Otros productos" },
+export type CategoryIconKind =
+  "perfume" | "moda" | "belleza" | "accesorios" | "calzado" | "otros";
+
+export const placeholderCategories: readonly {
+  slug: string;
+  name: string;
+  icon: CategoryIconKind;
+}[] = [
+  { slug: "perfumeria", name: "Perfumería", icon: "perfume" },
+  { slug: "moda", name: "Moda", icon: "moda" },
+  { slug: "belleza-y-cuidado", name: "Belleza y cuidado", icon: "belleza" },
+  { slug: "accesorios", name: "Accesorios", icon: "accesorios" },
+  { slug: "calzado", name: "Calzado", icon: "calzado" },
+  { slug: "otros-productos", name: "Otros productos", icon: "otros" },
 ];

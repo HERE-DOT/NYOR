@@ -1,19 +1,23 @@
 import Link from "next/link";
+import { Logo } from "@/components/brand/logo";
 import { brand } from "@/config/site";
 import { cn } from "@/lib/cn";
 
-/**
- * Marca de texto provisional: el logo definitivo está pendiente (decisión 12).
- * Cuando exista, se sustituye aquí y en `src/app/icon.svg`.
- */
-export function Wordmark({ className }: { className?: string }) {
+/** Enlace al inicio con el nombre NYOR en dorado. El logo dentro es decorativo: el enlace lleva la etiqueta. */
+export function Wordmark({
+  tone = "onLight",
+  className,
+}: {
+  tone?: "onLight" | "onDark";
+  className?: string;
+}) {
   return (
     <Link
       href="/"
       aria-label={`${brand.name} — ir al inicio`}
-      className={cn("font-serif text-3xl font-semibold tracking-[0.32em]", className)}
+      className={cn("inline-block", className)}
     >
-      {brand.name}
+      <Logo variant="wordmark" tone={tone} label={null} className="h-7 w-auto sm:h-8" />
     </Link>
   );
 }

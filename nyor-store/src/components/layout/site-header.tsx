@@ -6,7 +6,7 @@ import { Wordmark } from "./wordmark";
 
 export function SiteHeader() {
   return (
-    <header className="border-chocolate/15 bg-marfil/95 sticky top-0 z-40 border-b backdrop-blur">
+    <header className="bg-marfil/85 sticky top-0 z-40 backdrop-blur">
       <Container className="relative flex h-18 items-center justify-between">
         <Wordmark />
         <nav aria-label="Principal" className="hidden md:block">
@@ -14,6 +14,8 @@ export function SiteHeader() {
         </nav>
         <MobileNav items={mainNav} />
       </Container>
+      {/* Filete dorado metálico */}
+      <div aria-hidden className="bg-oro h-px w-full" />
     </header>
   );
 }

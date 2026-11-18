@@ -1,8 +1,11 @@
+import { CategoryIcon } from "@/components/brand/category-icon";
+import { Logo } from "@/components/brand/logo";
+import { PhraseBand } from "@/components/brand/phrase-band";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { brand, placeholderCategories } from "@/config/site";
+import { placeholderCategories } from "@/config/site";
 
 // Redactado en futuro a propósito: estas funciones (checkout, pagos, entregas) aún no existen.
 const promesas = [
@@ -26,7 +29,7 @@ export default function HomePage() {
   return (
     <>
       {/* Presentación de marca */}
-      <section className="border-chocolate/15 overflow-hidden border-b">
+      <section className="bg-seda overflow-hidden">
         <Container className="grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.15fr_1fr] lg:gap-8 lg:py-24">
           <div>
             <Eyebrow>Boutique multimarca</Eyebrow>
@@ -49,21 +52,25 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Composición decorativa: arco + resplandor ("OR" = luz). No es una foto de producto. */}
+          {/* Composición decorativa: arco + resplandor + logo. No es una foto de producto. */}
           <div
             aria-hidden
             className="relative mx-auto aspect-[6/5] w-full max-w-xs sm:aspect-[4/5] sm:max-w-sm lg:max-w-md"
           >
             <div className="glow-or absolute -inset-10" />
-            <div className="bg-rosa absolute inset-0 rounded-t-[999px] rounded-b-[2rem]" />
+            <div className="bg-rosa/70 absolute inset-0 rounded-t-[999px] rounded-b-[2rem]" />
             <div className="border-dorado absolute inset-4 rounded-t-[999px] rounded-b-[1.4rem] border" />
-            <div className="bg-marfil absolute inset-x-10 bottom-10 flex h-28 items-center justify-center rounded-2xl">
-              <span className="font-serif text-4xl font-semibold tracking-[0.32em]">
-                {brand.name}
-              </span>
+            <div className="bg-chocolate absolute inset-x-8 bottom-10 flex items-center justify-center rounded-2xl px-6 py-7 shadow-lg">
+              <Logo
+                variant="full"
+                tone="onDark"
+                label={null}
+                className="w-full max-w-60"
+              />
             </div>
           </div>
         </Container>
+        <div aria-hidden className="bg-oro h-px w-full opacity-70" />
       </section>
 
       {/* Categorías (provisionales hasta la Fase 3) */}
@@ -73,16 +80,14 @@ export default function HomePage() {
           <h2 id="titulo-categorias" className="mt-5 text-4xl sm:text-5xl">
             Encuentra lo tuyo
           </h2>
-          <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3">
-            {placeholderCategories.map((cat, i) => (
+          <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
+            {placeholderCategories.map((cat) => (
               // Tarjeta informativa, NO es un enlace: aún no hay filtros por categoría.
               // En la Fase 3 pasará a ser <Link href={`/tienda?categoria=${cat.slug}`}>.
               <li key={cat.slug}>
-                <div className="border-chocolate/20 flex aspect-[5/3] flex-col justify-between rounded-2xl border bg-white/40 p-5">
-                  <span aria-hidden className="text-sm tracking-[0.2em]">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="font-serif text-2xl leading-tight sm:text-3xl">
+                <div className="border-dorado/50 flex aspect-[4/3] flex-col items-center justify-center gap-3 rounded-3xl border bg-white/55 p-4 text-center shadow-sm">
+                  <CategoryIcon kind={cat.icon} className="h-12 w-12 sm:h-14 sm:w-14" />
+                  <span className="font-serif text-xl leading-tight sm:text-2xl">
                     {cat.name}
                   </span>
                 </div>
@@ -93,10 +98,7 @@ export default function HomePage() {
       </section>
 
       {/* Novedades: estado vacío honesto */}
-      <section
-        aria-labelledby="titulo-novedades"
-        className="border-chocolate/15 border-y py-16 sm:py-24"
-      >
+      <section aria-labelledby="titulo-novedades" className="bg-seda py-16 sm:py-24">
         <Container>
           <h2 id="titulo-novedades" className="sr-only">
             Novedades
@@ -133,14 +135,7 @@ export default function HomePage() {
       </section>
 
       {/* Frase de marca */}
-      <section className="on-dark bg-chocolate text-marfil">
-        <Container className="py-20 text-center sm:py-28">
-          <span aria-hidden className="bg-dorado mx-auto mb-8 block h-px w-14" />
-          <p className="mx-auto max-w-3xl font-serif text-4xl leading-tight italic sm:text-6xl">
-            {brand.spiritualPhrase}
-          </p>
-        </Container>
-      </section>
+      <PhraseBand />
     </>
   );
 }

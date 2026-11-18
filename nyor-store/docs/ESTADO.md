@@ -52,3 +52,10 @@
 ## Siguiente: Fase 2 — Base de datos, Auth y RLS
 
 Requiere tu aprobación y, antes de empezar: proyecto Supabase nuevo de NYOR (desarrollo), cliente OAuth de Google propio, y los correos de los dos administradores. Ver sección 10 del diagnóstico.
+
+## Fase 1.2 — Rediseño "dorado luxury" (2026-11-18)
+- Logo NYOR vectorial dorado metálico (`src/components/brand/logo.tsx`) con corona de pétalos y destello en la O. **Provisional**: recreación propia, no el logo de la maqueta; se reemplaza cuando exista el definitivo (decisión 12).
+- Paleta base intacta; se añaden derivados del dorado (`dorado-profundo`, `dorado-claro`) solo para degradados y texto dorado sobre chocolate.
+- Fondo "seda", filetes dorados, tarjetas redondeadas con iconos lineales propios, frase en caligrafía (Allura), botón principal chocolate.
+- Omitido a propósito: buscador, carrito y fotos de producto de la maqueta (aún no existen funciones ni fotografías reales).
+- Verificado: format, lint, typecheck, tests unitarios, build y e2e (axe) en móvil y escritorio.

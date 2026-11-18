@@ -3,10 +3,12 @@ import type { ComponentProps } from "react";
 import { cn } from "@/lib/cn";
 
 const variants = {
-  /** CTA principal: rosa con texto chocolate (4,5:1). */
-  primary: "bg-rosa text-chocolate hover:bg-chocolate hover:text-marfil",
-  /** Sobre fondos claros. */
+  /** CTA principal: chocolate con texto marfil (8,7:1), como en el concepto de marca. */
+  primary: "bg-chocolate text-marfil hover:bg-rosa hover:text-chocolate",
+  /** Alias de `primary`, conservado por compatibilidad. */
   dark: "bg-chocolate text-marfil hover:bg-rosa hover:text-chocolate",
+  /** Rosa suave con texto chocolate (4,5:1). */
+  rosa: "bg-rosa text-chocolate hover:bg-chocolate hover:text-marfil",
   outline: "border border-chocolate text-chocolate hover:bg-chocolate hover:text-marfil",
   /** Sobre fondos chocolate. */
   outlineLight: "border border-marfil text-marfil hover:bg-marfil hover:text-chocolate",
@@ -16,7 +18,7 @@ export type ButtonVariant = keyof typeof variants;
 
 export function buttonStyles(variant: ButtonVariant = "primary", className?: string) {
   return cn(
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-medium tracking-[0.08em] uppercase transition-colors duration-200 disabled:pointer-events-none disabled:opacity-50",
+    "inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-8 py-3 text-sm font-medium tracking-[0.14em] uppercase transition-colors duration-200 disabled:pointer-events-none disabled:opacity-50",
     variants[variant],
     className,
   );

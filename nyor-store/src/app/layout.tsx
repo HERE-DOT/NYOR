@@ -1,6 +1,7 @@
 import "@fontsource-variable/cormorant-garamond";
 import "@fontsource-variable/cormorant-garamond/wght-italic.css";
 import "@fontsource-variable/jost";
+import "@fontsource/allura";
 import type { Metadata, Viewport } from "next";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
